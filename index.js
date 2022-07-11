@@ -26,7 +26,7 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 
-app.get('/',(req, res)=>{res.status(200).send({message: "It works"})})
+app.get('/',(req, res)=>{res.status(200).send({message: "It works now.....!"})})
 require("./startup/routes")(app);
 
 const port = process.env.PORT || 3002
