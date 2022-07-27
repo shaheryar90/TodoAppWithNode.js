@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema({
     imageUrl: {
         type: String,
         trim: true,
-        required: [true, 'Required Field cannot be left empty']
+        // required: [true, 'Required Field cannot be left empty']
     }
 }, {
     timestamps: true

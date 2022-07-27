@@ -21,6 +21,24 @@ module.exports = {
       return res.status(500).send(Response.failure(500, "Server Error"))
     }
   },
+  updateCategory: async (req, res) => {
+    console.log(req.params,"ppppppp")
+    try {
+      let category;
+      if(req.params.id){
+        category = await Category.findOneAndUpdate({ _id: req.params.id }, { name: "bilal" }, {
+          new:true
+        });
+      }
+      else {
+        category = await Category.find({});
+      }
+      return res.status(200).send(Response.success(200, category))
+    } catch (error) {
+      console.log(error)
+      return res.status(500).send(Response.failure(500, "Server Error"))
+    }
+  },
   getCategory: async (req, res) => {
     try {
       let category;

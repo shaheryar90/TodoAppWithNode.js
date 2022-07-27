@@ -49,7 +49,7 @@ module.exports = {
           'any.required': `Required fields cannot be empty`
         }),
       platform: Joi.string()
-        .required()
+        // .required()
         .messages({
           'any.required': `Required fields cannot be empty`
         }),
