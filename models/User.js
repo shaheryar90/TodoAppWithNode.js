@@ -29,7 +29,13 @@ const userSchema = new mongoose.Schema({
         type: String,
         trim: true,
         // required: [true, 'Required Field cannot be left empty']
-    }
+    },
+    otp: {
+        type: String,
+        trim: true,
+        required: false,
+        
+    },
 }, {
     timestamps: true
 })

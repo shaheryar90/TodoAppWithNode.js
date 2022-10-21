@@ -10,10 +10,12 @@ const uploads1 = UploadFile1.uploadImage()
 
 router.post("/addProduct", productController.addProduct);
 router.post("/addImage",uploads1.single("image"), productController.addImage);
+router.post("/skinImage",uploads1.single("image"), productController.skinImage);
 
 // router.get("/:id?", auth, isAdmin, productController.getProduct);
-router.get("/:id?", productController.getProduct);
-router.delete("/deleteProduct/:id?", productController.deleteProduct);
+router.get("/getProduct", productController.getProduct);
+router.delete("/deleteProduct/:id", productController.deleteProduct);
+router.put("/updateProduct/:id", productController.updateProduct);
 
 
 

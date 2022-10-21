@@ -8,6 +8,6 @@ const isAdmin = require("../../middlewares/isAdmin")
 router.post("/addCategory", categoryController.addCategory);
 router.post("/:id?/updateCategory", categoryController.updateCategory);
 
-router.get("/:id?", auth, isAdmin, categoryController.getCategory);
+router.get("/:id?", auth, categoryController.getCategory);
 
 module.exports = router;

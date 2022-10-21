@@ -72,7 +72,7 @@ module.exports = {
     });
     return schema.validate(obj, { allowUnknown: true });
   },
-  validateAddProduct: function (obj) {
+  validateAddData: function (obj) {
     const schema = Joi.object({
       name: Joi.string()
         .max(50)
@@ -80,21 +80,43 @@ module.exports = {
         .messages({
           'any.required': `Required fields cannot be empty`
         }),
-      categoryId: Joi.string()
+      age: Joi.number()
+        .max(50)
         .required()
         .messages({
           'any.required': `Required fields cannot be empty`
         }),
-      description: Joi.string()
+      parentCategory: Joi.string()
         .required()
         .messages({
           'any.required': `Required fields cannot be empty`
-        }),
-      price: Joi.number()
+        }).allow(null)
+    });
+    return schema.validate(obj, { allowUnknown: true });
+  },
+  validateAddProduct: function (obj) {
+    const schema = Joi.object({
+      name: Joi.string()
+        .max(50)
         .required()
         .messages({
           'any.required': `Required fields cannot be empty`
         })
+      // categoryId: Joi.string()
+      //   .required()
+      //   .messages({
+      //     'any.required': `Required fields cannot be empty`
+      //   }),
+      // description: Joi.string()
+      //   .required()
+      //   .messages({
+      //     'any.required': `Required fields cannot be empty`
+      //   }),
+      // price: Joi.number()
+      //   .required()
+      //   .messages({
+      //     'any.required': `Required fields cannot be empty`
+      //   })
     });
     return schema.validate(obj, { allowUnknown: true });
   },

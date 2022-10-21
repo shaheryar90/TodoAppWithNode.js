@@ -7,7 +7,8 @@ class UploadFile {
         const storage = multer.diskStorage({
             destination: function (req, file, cb) {
                 // const userName = req?.body?.email?.split("@")[0] || "products";
-                const dir = `./public/uploads/img${Math.random() * 100}/`
+                // const dir = `./public/uploads/img${Math.random() * 100}/`
+                const dir = `./public/uploads/diseaseImage/`
                 fs.stat(dir, exist => {
                     if (exist) {
                         var mkdir = fs.mkdir(dir, () => { })

@@ -3,7 +3,10 @@ const router = express.Router();
 const authController = require('../../controllers/auth');
 const UploadFile = require("../../services/UploadFiles");
 const uploads = UploadFile.uploadImage()
-const auth = require("../../middlewares/auth")
+const auth = require("../../middlewares/auth");
+const isAdmin = require("../../middlewares/isAdmin");
+
+
 // const isBanned = require("../../middlewares/isBanned")
 
 /**
@@ -15,6 +18,7 @@ router.post("/signup",authController.signUp);
 // router.post("/signup",authController.signUp1);
 
 router.post("/login", authController.login);
+router.post("/notification", authController.pushNotification);
 
 // router.post("/getUsers",authController.getUsers)
 

@@ -5,6 +5,26 @@ const mongoose = require("mongoose");
 const { MONGO_URL } = require("./config/config");
 const cors = require('cors');
 
+
+
+//web-push
+const webpush = require('web-push');
+
+//body-parser
+const bodyParser = require('body-parser');
+
+//path
+const path = require('path');
+
+//using express 
+
+//using bodyparser
+app.use(bodyParser.json())
+const publicVapidKey = "BCsL1ViBwupeqwUR6fj3L7N_tQmLMk74r5aBrl6gsAYEJmsDCGqw_lrji_ZCge8XoqPkdEMl5smbBPA1-hJ2nFQ"
+const privateVapidKey= "apIRGSVJcewoK_FxzpAP32cEgG9PlpnF-Qzylk65Tz8";
+webpush.setVapidDetails('mailto:mercymeave@section.com', publicVapidKey, privateVapidKey);
+app.use(express.static(path.join(__dirname, "client")));
+
 mongoose.connect(MONGO_URL,
   {
     useNewUrlParser: true,
